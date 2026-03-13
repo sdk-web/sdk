@@ -122,9 +122,7 @@
                                 <div class="trigger trigger_10"></div> 
                                 <div class="sticky-bg">
                                     <div class="scrl-bg-1 animate_bg_1">
-                                        <video id="scroll-video-1" muted loop>
-                                            <source src="/assets/video/bg.mp4" type="video/mp4">
-                                        </video>
+                                        <iframe id="scroll-video-1" src="https://www.youtube.com/embed/oUyWcoq9k4M?enablejsapi=1&mute=1&loop=1&playlist=oUyWcoq9k4M&controls=0&showinfo=0&rel=0&autoplay=0" frameborder="0" allow="autoplay; fullscreen" style="pointer-events:none;"></iframe>
                                         <div class="overlay"></div>
                                     </div>
                                     <div class="trigger_bg"></div>
@@ -175,9 +173,7 @@
                                     </div>
                                     <div class="bmabot-cont">
 										<div class="videorow">
-											<video id="skillVideo1" muted>
-												<source src="/assets/video/skill1.mp4" type="video/mp4">
-											</video>
+											<iframe id="skillVideo1" src="https://www.youtube.com/embed/4B2-X--biZk?enablejsapi=1&mute=1" frameborder="0" allow="autoplay; fullscreen" style="width: 100%; aspect-ratio: 16/9;"></iframe>
 											<div class="detail">
 												<button type="button" onclick="skillPlay(1)">PLAY</button>
 												<a href="http://www.dyauto.kr/product/cockpit-module.php" target="_blank">LINK</a>
@@ -185,9 +181,7 @@
 										</div>
 										
 										<div class="videorow">
-											<video id="skillVideo2" muted>
-	                                            <source src="/assets/video/skill2.mp4" type="video/mp4">
-	                                        </video>
+											<iframe id="skillVideo2" src="https://www.youtube.com/embed/dJ3DWLe9WYk?enablejsapi=1&mute=1" frameborder="0" allow="autoplay; fullscreen" style="width: 100%; aspect-ratio: 16/9;"></iframe>
 											<div class="detail">
 											<button type="button" onclick="skillPlay(2)">PLAY</button>
 												<a href="http://www.dyauto.kr/r-d/industrial-property-rights.php" target="_blank">LINK</a>
@@ -195,9 +189,7 @@
 										</div>
 
 										<div class="videorow">
-											<video id="skillVideo3" muted>
-												<source src="/assets/video/skill3.mp4" type="video/mp4">
-											</video>
+											<iframe id="skillVideo3" src="https://www.youtube.com/embed/e_Mep_U3ZYE?enablejsapi=1&mute=1" frameborder="0" allow="autoplay; fullscreen" style="width: 100%; aspect-ratio: 16/9;"></iframe>
 											<div class="detail">
 											<button type="button" onclick="skillPlay(3)">PLAY</button>
 												<a href="http://www.dyauto.kr/r-d/research-facilities.php" target="_blank">LINK</a>
@@ -271,17 +263,17 @@
             console.log("movie_start_y: " + movie_start_y);
             console.log("movie_end_y: " + movie_end_y);
             if(movie_scroll > movie_start_y && movie_scroll < movie_end_y){
-                $("#scroll-video-1").get(0).play();
+                $("#scroll-video-1")[0].contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
 				$(".about_left").addClass("on");
             }else{
-                $("#scroll-video-1").get(0).pause();
+                $("#scroll-video-1")[0].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
 				$(".about_left").removeClass("on");
                 console.log("끝");
             }
         });
 
 		function skillPlay(n){
-			$("#skillVideo"+n).get(0).play();
+			$("#skillVideo"+n)[0].contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
 		}
 
 		function wheel(){
