@@ -152,7 +152,7 @@ span.cl-999 {color:#999;}
 .bmabot-contents .bmabot-cont .settingrow .text {font-size:20px; line-height:1.6; margin:20px 0 0;}
 .bma-bot-tit {color:#222; font-size:68px; line-height:86px; text-align:center; margin-top:200px; font-weight:800;}
 #bma .scrl-bg-1 {background: url(/assets/images/scrl-bg-bma.jpg) no-repeat center center; background-size: cover; background:none; overflow:hidden; width:80%;}
-#bma .scrl-bg-1 video {    position: absolute; top: 50%; left: 50%; width: 120%; height: 120%; z-index: 4; transform: translate(-50%, -50%);}
+#bma .scrl-bg-1 video, #bma .scrl-bg-1 iframe {    position: absolute; top: 50%; left: 50%; width: 120%; height: 120%; z-index: 4; transform: translate(-50%, -50%);}
 
 
 
