@@ -173,7 +173,7 @@
                                     </div>
                                     <div class="bmabot-cont">
 										<div class="videorow">
-											<iframe id="skillVideo1" src="https://www.youtube.com/embed/4B2-X--biZk?enablejsapi=1&mute=1" frameborder="0" allow="autoplay; fullscreen" style="width: 100%; aspect-ratio: 16/9;"></iframe>
+											<iframe id="skillVideo1" src="https://www.youtube.com/embed/4B2-X--biZk?enablejsapi=1&mute=1&controls=0&showinfo=0&rel=0" frameborder="0" allow="autoplay; fullscreen" style="width: 100%; aspect-ratio: 16/9; pointer-events: none;"></iframe>
 											<div class="detail">
 												<button type="button" onclick="skillPlay(1)">PLAY</button>
 												<a href="http://www.dyauto.kr/product/cockpit-module.php" target="_blank">LINK</a>
@@ -181,7 +181,7 @@
 										</div>
 										
 										<div class="videorow">
-											<iframe id="skillVideo2" src="https://www.youtube.com/embed/dJ3DWLe9WYk?enablejsapi=1&mute=1" frameborder="0" allow="autoplay; fullscreen" style="width: 100%; aspect-ratio: 16/9;"></iframe>
+											<iframe id="skillVideo2" src="https://www.youtube.com/embed/dJ3DWLe9WYk?enablejsapi=1&mute=1&controls=0&showinfo=0&rel=0" frameborder="0" allow="autoplay; fullscreen" style="width: 100%; aspect-ratio: 16/9; pointer-events: none;"></iframe>
 											<div class="detail">
 											<button type="button" onclick="skillPlay(2)">PLAY</button>
 												<a href="http://www.dyauto.kr/r-d/industrial-property-rights.php" target="_blank">LINK</a>
@@ -189,7 +189,7 @@
 										</div>
 
 										<div class="videorow">
-											<iframe id="skillVideo3" src="https://www.youtube.com/embed/e_Mep_U3ZYE?enablejsapi=1&mute=1" frameborder="0" allow="autoplay; fullscreen" style="width: 100%; aspect-ratio: 16/9;"></iframe>
+											<iframe id="skillVideo3" src="https://www.youtube.com/embed/e_Mep_U3ZYE?enablejsapi=1&mute=1&controls=0&showinfo=0&rel=0" frameborder="0" allow="autoplay; fullscreen" style="width: 100%; aspect-ratio: 16/9; pointer-events: none;"></iframe>
 											<div class="detail">
 											<button type="button" onclick="skillPlay(3)">PLAY</button>
 												<a href="http://www.dyauto.kr/r-d/research-facilities.php" target="_blank">LINK</a>
