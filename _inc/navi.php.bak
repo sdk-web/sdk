@@ -1,0 +1,99 @@
+<div id="navi">
+	<div class="con">
+		<div class="navi-box" data-depth1="<?=$programNum[0];?>" data-depth2="<?=$programNum[1];?>">
+			<div class="home"><a href="/"><i class="fas fa-home-lg-alt"></i></a></div>
+			<div class="depth-1">
+				<div class="name"></div>
+				<ul class="style-depth main-depth">
+					<li><a href="/">ABOUT US</a></li>
+					<li><a href="/">BUSINESS FIELD</a></li>
+					<li><a href="/">REFERENCE</a></li>
+					<li><a href="/">COMMUNITY</a></li>
+					<li><a href="/">CONTACT</a></li>
+				</ul>
+			</div><!-- depth-1 -->
+			<div class="depth-2">
+				<div class="name">
+					<div class="plus-minus"></div>
+				</div>
+				<ul class="style-depth sub-depth1">
+					<li><a href="/">OVER VIEW</a></li>
+					<li><a href="/">CEO MESSAGE</a></li>
+					<li><a href="/">HISTORY</a></li>
+					<li><a href="/">CERTIFICATION</a></li>
+					<li><a href="/">ORGANIZATION</a></li>
+				</ul>
+				<ul class="style-depth sub-depth2">
+					<li><a href="/">Manufacturing Division</a></li>
+					<li><a href="/">Production Division</a></li>
+					<li><a href="/">Sales Division</a></li>
+				</ul>
+				<ul class="style-depth sub-depth3">
+					<li><a href="/">해색 원격탐사</a></li>
+					<li><a href="/">광학 원격탐사</a></li>
+					<li><a href="/">마이크로파 원격탐사</a></li>
+					<li><a href="/">무인기 원격탐사</a></li>
+				</ul>
+				<ul class="style-depth sub-depth4">
+					<li><a href="/">STAR 시스템</a></li>
+					<li><a href="/">무인기</a></li>
+					<li><a href="/">현장관측장비</a></li>
+				</ul>
+				<ul class="style-depth sub-depth5">
+					<li><a href="/">사업단</a></li>
+					<li><a href="/">관련기관</a></li>
+				</ul>
+			</div><!-- depth-2 -->
+		</div><!-- navi-box -->
+	</div><!-- con -->
+</div><!-- navi -->
+
+<script>
+$(function(){
+//서브 navi 메뉴 시작
+	var depthNum1 = $("#navi .navi-box").data("depth1");
+	var depthNum2 = $("#navi .navi-box").data("depth2");
+//	$(".depth-1").on("click",function(){
+//		$(this).addClass("on");
+//		$(".main-depth").stop().slideToggle();
+//	});
+//	$(".main-depth li a").on("click",function(e){
+//		e.preventDefault();
+//		depthNum1 = $(this).data("depth");
+//		alert(depthNum1);
+//		$(".main-depth").stop().slideUp();
+//	});
+	$(".depth-1").on("click",function(){
+		if($(this).hasClass("on")){
+			$(this).removeClass("on");
+			$(".main-depth").stop().slideUp();
+		}else{
+			$(this).addClass("on");
+			$(".main-depth").stop().slideDown();
+		}
+	});
+
+	$(".depth-2").on("click",function(){
+		if($(this).hasClass("on")){
+			$(this).removeClass("on");
+			$(".sub-depth" + depthNum1).stop().slideUp();
+		}else{
+			$(this).addClass("on");
+			$(".sub-depth" + depthNum1).stop().slideDown();
+		}
+	});
+
+	$(document).mouseup(function (e){
+	  var LayerPopup = $(".depth-2");
+	  if(LayerPopup.has(e.target).length === 0){
+		LayerPopup.removeClass("on");
+		$(".sub-depth" + depthNum1).stop().slideUp();
+	  }
+	});
+
+	$("#navi .depth-1 .name").text($(".main-depth li").eq(depthNum1-1).children().text());
+	$("#navi .depth-2 .plus-minus").before($(".sub-depth"+depthNum1+" li").eq(depthNum2-1).children().text());
+
+//서브 navi 메뉴 끝
+});
+</script>
