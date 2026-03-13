@@ -146,7 +146,7 @@
 												<span class="line1"></span>
 												<span class="line2"></span>
 												<span class="line3"></span>
-												<div class="skill_img"><img src="img/skill1.gif" alt="" style="width:700px;"><br><img src="img/skill2.gif" alt="" style="width:700px;"></div>
+												<div class="skill_img"><img src="img/skill1.webp" alt="" style="width:700px;"><br><img src="img/skill2.webp" alt="" style="width:700px;"></div>
 											</div>
 										</div>
                                     </div>
@@ -167,8 +167,8 @@
                                 <div class="bmabot-contents">
                                     <div class="bmabot-cont">
 										<div class="imgrow">
-											<img src="/assets/images/skill1.gif" alt=""><br>
-											<img src="/assets/images/skill2.gif" alt="">
+											<img src="/assets/images/skill1.webp" alt=""><br>
+											<img src="/assets/images/skill2.webp" alt="">
 										</div>
                                     </div>
                                     <div class="bmabot-cont">
