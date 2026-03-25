@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko" ng-app="portfolioApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <base href="/">
+    <!-- AngularJS 1.8 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+    
+    <!-- AngularJS Custom Scripts -->
+    <script src="/assets/js/app.js"></script>
+    <script src="/assets/js/router.js"></script>
+    <script src="/assets/js/controllers.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; color: #333; margin: 0; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; }
+        .data-box { background: #eef2f5; padding: 15px; border-radius: 5px; margin-top: 20px; border-left: 4px solid #3498db; }
+        .error { color: #e74c3c; font-weight: bold; }
+        nav { margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #ddd; }
+        nav a { margin-right: 15px; text-decoration: none; color: #3498db; font-weight: bold; }
+        nav a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body ng-controller="MainController">
+    <div class="container">
+        <nav>
+            <a href="/">홈</a>
+            <a href="/about">정보</a>
+        </nav>
+        
+        <!-- 라우팅된 페이지가 표시될 영역 -->
+        <div ng-view></div>
+    </div>
+</body>
+</html>
