@@ -58,7 +58,7 @@
                         </section>
                         <section id="scroll-section-2" data-canvas="1">
                             <div class="context">
-                                <div class="spaceer h150"></div>
+                                <div class="spaceer h50"></div>
                                 <div class="tbox animate_1 left font-montserrat" data-val="1" data-name="(주)덕양산업 *패럴렉스기법 사용" data-url="https://dyauto.songdk.kro.kr/">
                                     <div class="small">Portfolio</div>
                                     <div class="big">(주)덕양산업</div>

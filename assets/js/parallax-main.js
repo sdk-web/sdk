@@ -29,8 +29,8 @@ const sceneInfo = [
         }
     },
     {
-        // 1 — 포트폴리오(썸네일 포함) 스크롤 여유
-        heightNum: 13,
+        // 1 — 포트폴리오: 스크롤 부담 줄이고 간격 타이트하게
+        heightNum: 7,
         scrollHeight: 0,
         objs: {
             container: document.querySelector('#scroll-section-2')
@@ -245,6 +245,7 @@ for (var i = 0; i < animateElem.length; i++) {
     var currentTriggerElem = triggerElem[i];
     var isPofol = i >= 0 && i <= 6;
     var isAbout = currentAnimateElem === ".animate_11";
+    var isLastPofol = i === 6;
 
     var timeline = new TimelineMax();
 
@@ -253,11 +254,11 @@ for (var i = 0; i < animateElem.length; i++) {
         1,
         {
             ease: SlowMo.ease.config(0.7, 0.7, false),
-            y: isPofol ? 30 : 50
+            y: isPofol ? 24 : 50
         },
         {
             ease: SlowMo.ease.config(0.7, 0.7, false),
-            y: isPofol ? -30 : -50
+            y: isPofol ? -24 : -50
         }
     );
 
@@ -278,17 +279,18 @@ for (var i = 0; i < animateElem.length; i++) {
                 opacity: 0
             });
     } else if (isPofol) {
-        // 썸네일 포함: 조금 더 오래 보이도록 hold 연장
+        // 포폴 간격 타이트 + 마지막은 다음 문구와 겹치지 않게 빨리 퇴장
+        var hold = isLastPofol ? 0.25 : 0.4;
         tween_opacity
-            .to(currentAnimateElem, 0.25, {
+            .to(currentAnimateElem, 0.2, {
                 ease: Linear.easeNone,
                 opacity: 1
             })
-            .to(currentAnimateElem, 0.25, {
+            .to(currentAnimateElem, 0.2, {
                 ease: Linear.easeNone,
                 opacity: 1
-            }, "+=0.85")
-            .to(currentAnimateElem, 0.3, {
+            }, "+=" + hold)
+            .to(currentAnimateElem, isLastPofol ? 0.2 : 0.25, {
                 ease: Linear.easeNone,
                 opacity: 0
             });
@@ -313,7 +315,7 @@ for (var i = 0; i < animateElem.length; i++) {
 
     var scene_main = new ScrollMagic.Scene({
         triggerElement: currentTriggerElem,
-        duration: isPofol ? "140%" : "100%"
+        duration: isLastPofol ? "85%" : (isPofol ? "95%" : "100%")
     })
         .setTween(timeline)
         .addTo(controller);

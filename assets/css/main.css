@@ -160,15 +160,30 @@ span.cl-999 {color:#999;}
     0%, 8% { transform: translate3d(0, 0, 0); }
     92%, 100% { transform: translate3d(0, calc(-100% + 220px), 0); }
 }
+/* 포폴 간격이 짧아진 만큼 패닝도 조금 빠르게 */
+#bma .tbox .pofol-inline .pofol-thumb img {
+    animation-duration: 6.5s;
+}
 #bma .tbox .pofol-inline .pofol-desc { margin-top: 10px; font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.4; }
 #bma .tbox .pofol-inline .pofol-url { display: inline-block; margin-top: 8px; font-size: 14px; color: #fff; text-decoration: underline; word-break: break-all; }
 #bma .tbox.right .pofol-inline { text-align: right; }
 #bma .tbox.right .pofol-inline .pofol-thumb { margin-left: auto; }
 #bma .tbox.left .pofol-inline { text-align: left; }
 
-/* 포트폴리오 구간: 썸네일 포함해 스크롤 여유 확보 */
+/* 포트폴리오 구간: 작품 간 텀·전체 스크롤 부담 축소 */
 #scroll-section-2 .trigger {
-    height: 140vh;
+    height: 75vh;
+}
+#scroll-section-2 .tbox {
+    pointer-events: none;
+}
+#scroll-section-2 .tbox .pofol-inline {
+    pointer-events: auto;
+}
+/* 다음 문구 구간이 마지막 포폴 sticky 위에 자연스럽게 올라오도록 */
+#scroll-section-3 {
+    position: relative;
+    z-index: 12;
 }
 
 .about_left .skill_wrap {
