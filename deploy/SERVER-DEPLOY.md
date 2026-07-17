@@ -50,12 +50,30 @@ git pull origin main
 
 또는 `bash /root/pull-sdk.sh` (업로드 후).
 
-### B. Git 최초 연결 / Deploy Key 설정
+### B. Git SSH Deploy Key 설정 (선택)
 
-1. 로컬에서 `deploy/upload.sh` 로 스크립트 업로드
-2. 서버에서 `bash /root/setup-git-deploy-sdk.sh` 실행
-3. 출력된 **공개키**를 GitHub `sdk-web/sdk` → Settings → Deploy keys (read-only)에 등록
-4. 다시 `bash /root/setup-git-deploy-sdk.sh` 실행
+HTTPS pull이 안 될 때:
+
+1. 로컬에서 `bash deploy/upload.sh` 로 스크립트 업로드
+2. 서버 공개키 확인: `cat /root/.ssh/github_sdk_web_sdk.pub`
+3. GitHub `sdk-web/sdk` → Settings → Deploy keys (read-only) 등록
+4. `bash /root/setup-git-deploy-sdk.sh` 실행
+
+**현재 서버 공개키 (2026-07-18):**
+
+```
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOqT9STA+3hO+HEnngwzOV8j34EluQ8J+w8Ns4MTizvd iwinv-sdk-deploy
+```
+
+### C. Git 최초 연결 (HTTPS)
+
+서버에서 HTTPS remote로도 동기화 가능:
+
+```bash
+cd /var/www/sdk
+git remote set-url origin https://github.com/sdk-web/sdk.git
+git fetch origin main && git reset --hard origin/main
+```
 
 ---
 
