@@ -176,12 +176,7 @@
 													</p>
 												</li>
 											</ul>
-											<div class="skill_wrap">
-												<span class="line1"></span>
-												<span class="line2"></span>
-												<span class="line3"></span>
-												<div class="skill_img"><img src="/assets/images/skill1.webp" alt="" style="width:700px;"><br><img src="/assets/images/skill2.webp" alt="" style="width:700px;"></div>
-											</div>
+											<!-- skill 이미지는 하단 Main Skill에서만 표시 (영상/경력 침범 방지) -->
 										</div>
                                     </div>
                                     <div class="trigger trigger_11"></div>

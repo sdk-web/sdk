@@ -29,8 +29,8 @@ const sceneInfo = [
         }
     },
     {
-        // 1
-        heightNum: 10,
+        // 1 — 포트폴리오(썸네일 포함) 스크롤 여유
+        heightNum: 13,
         scrollHeight: 0,
         objs: {
             container: document.querySelector('#scroll-section-2')
@@ -243,6 +243,8 @@ var triggerElem = [".trigger_1", ".trigger_2", ".trigger_3", ".trigger_4", ".tri
 for (var i = 0; i < animateElem.length; i++) {
     var currentAnimateElem = animateElem[i];
     var currentTriggerElem = triggerElem[i];
+    var isPofol = i >= 0 && i <= 6;
+    var isAbout = currentAnimateElem === ".animate_11";
 
     var timeline = new TimelineMax();
 
@@ -251,17 +253,17 @@ for (var i = 0; i < animateElem.length; i++) {
         1,
         {
             ease: SlowMo.ease.config(0.7, 0.7, false),
-            y: 50
+            y: isPofol ? 30 : 50
         },
         {
             ease: SlowMo.ease.config(0.7, 0.7, false),
-            y: -50
+            y: isPofol ? -30 : -50
         }
     );
 
     var tween_opacity = new TimelineMax();
-    // animate_11(소개)만 fade-out을 늦춰 읽을 시간을 확보. 나머지 타이밍은 원본 유지.
-    if (currentAnimateElem === ".animate_11") {
+    if (isAbout) {
+        // 소개 텍스트: 읽을 시간 확보
         tween_opacity
             .to(currentAnimateElem, 0.25, {
                 ease: Linear.easeNone,
@@ -271,6 +273,21 @@ for (var i = 0; i < animateElem.length; i++) {
                 ease: Linear.easeNone,
                 opacity: 1
             }, "+=1.6")
+            .to(currentAnimateElem, 0.3, {
+                ease: Linear.easeNone,
+                opacity: 0
+            });
+    } else if (isPofol) {
+        // 썸네일 포함: 조금 더 오래 보이도록 hold 연장
+        tween_opacity
+            .to(currentAnimateElem, 0.25, {
+                ease: Linear.easeNone,
+                opacity: 1
+            })
+            .to(currentAnimateElem, 0.25, {
+                ease: Linear.easeNone,
+                opacity: 1
+            }, "+=0.85")
             .to(currentAnimateElem, 0.3, {
                 ease: Linear.easeNone,
                 opacity: 0
@@ -296,7 +313,7 @@ for (var i = 0; i < animateElem.length; i++) {
 
     var scene_main = new ScrollMagic.Scene({
         triggerElement: currentTriggerElem,
-        duration: "100%"
+        duration: isPofol ? "140%" : "100%"
     })
         .setTween(timeline)
         .addTo(controller);
