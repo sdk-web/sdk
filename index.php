@@ -59,7 +59,7 @@
                         <section id="scroll-section-2" data-canvas="1">
                             <div class="context">
                                 <div class="spaceer h150"></div>
-                                <div class="tbox animate_1 left font-montserrat" data-val="1" data-name="(주)덕양산업 *패럴렉스기법 사용" data-url="http://www.dyauto.kr/">
+                                <div class="tbox animate_1 left font-montserrat" data-val="1" data-name="(주)덕양산업 *패럴렉스기법 사용" data-url="https://dyauto.songdk.kro.kr/">
                                     <div class="small">Portfolio</div>
                                     <div class="big">(주)덕양산업</div>
                                 </div>
@@ -79,7 +79,7 @@
                                     <div class="big">인천스마트시티</div>
                                 </div>
                                 <div class="trigger trigger_4"></div>
-                                <div class="tbox animate_5 left font-montserrat" data-val="5" data-name="백아바이오티" data-url="http://219.248.41.228:98/">
+                                <div class="tbox animate_5 left font-montserrat" data-val="5" data-name="백아바이오티" data-url="https://baekabioty.songdk.kro.kr/">
                                     <div class="small">Portfolio</div>
                                     <div class="big">백아바이오티</div>
                                 </div>
@@ -133,12 +133,13 @@
 												<li><p>송대경 / 1994.01.05 / 010-7521-7550</p></li>
 												<li><p>eoruddl09@naver.com / 인천광역시 서구</p></li>
 												<li>
-													<p>HTML, CSS, JavaScript 기본 문법 이해, jQuery를 사용하여 기능 구현, 다양한 플러그인 활용, 반응형웹 제작<br>제로보드, 워드프레스, 그누보드를 이용한 웹사이트 제작</p>
+													<p>다양한 플러그인 활용, 반응형웹 제작<br>제로보드, 워드프레스, 그누보드를 이용한 웹사이트 제작<br>PHP(CodeIgniter), AngularJS, MariaDB 환경에서 개발.</p>
 												</li>
 												<li>
-													<p>아이웹스 (웹에이전시) / 2016. 11 ~ 2017. 11 <br>
-													쇼엠 (마케팅업체) / 2017. 12 ~ 2019. 12 <br>
-													㈜비엠씨 (개발업체) / 2020. 05 ~ 2022. 12
+													<p><a href="http://www.aiwebs.co.kr/" target="_blank">아이웹스</a> (웹에이전시) / 2016. 11 ~ 2017. 11 <br>
+													<a href="https://showm.kr/" target="_blank">쇼엠</a> (마케팅업체) / 2017. 12 ~ 2019. 12 <br>
+													<a href="https://bmcnet.kr/" target="_blank">㈜비엠씨</a> (개발업체) / 2020. 05 ~ 2022. 12 <br>
+                                                    <a href="https://story.mint05.com/" target="_blank">에듀서브</a> (화상영어플랫폼) / 2023. 05 ~ 2025. 12
 													</p>
 												</li>
 											</ul>
@@ -179,7 +180,7 @@
 											</div>
 											<div class="detail">
 												<button type="button" onclick="skillPlay(1)">PLAY</button>
-												<a href="http://www.dyauto.kr/product/cockpit-module.php" target="_blank">LINK</a>
+												<a href="https://dyauto.songdk.kro.kr/product/cockpit-module.php" target="_blank">LINK</a>
 											</div>
 										</div>
 										
@@ -190,7 +191,7 @@
 											</div>
 											<div class="detail">
 											<button type="button" onclick="skillPlay(2)">PLAY</button>
-												<a href="http://www.dyauto.kr/r-d/industrial-property-rights.php" target="_blank">LINK</a>
+												<a href="https://dyauto.songdk.kro.kr/r-d/industrial-property-rights.php" target="_blank">LINK</a>
 											</div>
 										</div>
 
@@ -201,7 +202,7 @@
 											</div>
 											<div class="detail">
 											<button type="button" onclick="skillPlay(3)">PLAY</button>
-												<a href="http://www.dyauto.kr/r-d/research-facilities.php" target="_blank">LINK</a>
+												<a href="https://dyauto.songdk.kro.kr/r-d/research-facilities.php" target="_blank">LINK</a>
 											</div>
 										</div>
                                     </div>
@@ -213,14 +214,14 @@
 												<img src="/assets/images/cafe24.svg" alt="">
 											</div>
 											<div class="text">
-												그누보드,워드프레스,카페24쇼핑몰 등 다양한 CMS 환경에서도 작업이 가능합니다. <br>
-												간단한 PHP 게시판, 관리자페이지 제작도 가능합니다.
+												그누보드, 워드프레스, 카페24쇼핑몰 등 다양한 CMS 환경에서 작업을 진행했습니다. <br>
+												PHP 환경에서 OpenAI API 연동을 통한 콘텐츠 운영 자동화 및 커서AI 활용.
 											</div>
 										</div>
                                     </div>
 
 									<footer>
-										Copyright ⓒ 2023. Song Daekyung All rights reserved.
+										Copyright ⓒ 2026. Song Daekyung All rights reserved.
 									</footer>
                                 </div>
 

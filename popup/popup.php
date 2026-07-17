@@ -7,7 +7,7 @@
 <div class="modal">
 	<div class="hidden_box">
 		<div class="btn_close" onclick="pop_toggle('close');">X</div>
-		<div class="img searchResultListBox"><img src="/assets/portfolio/site<?=$val?>.jpg" /></div>
+		<div class="img searchResultListBox"><img src="/assets/portfolio/site<?=$val?>.webp" /></div>
 		<div class="txt">
 			<?=$name?> <br>
 			<a href="<?=$url?>" target="_blank"><?=$url?></a>

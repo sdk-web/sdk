@@ -215,6 +215,7 @@ span.cl-999 {color:#999;}
 .about_left ul {width:100%; text-align:left; display: inline-block; width:650px; margin-left:10%; margin-top:5%;}
 .about_left ul li {position:relative; line-height:1.5; font-size:16px; display: inline-flex;text-align:left; width:auto !important;}
 .about_left ul li p {font-weight:normal; font-size:20px;  position:relative; line-height:1.5;  opacity:0; display: inline-block; text-align:left;}
+.about_left ul li p a{text-decoration:underline; color:#fff;}
 .about_left ul li:after {content: ''; position: absolute; display: block; left: 0; top: 0; width: 0%; height: 100%; background-color: #fff;}
 
 .about_left.on ul li p {animation:txt_unit .8s forwards ease-in-out;}
