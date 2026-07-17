@@ -47,7 +47,7 @@
 .scroll-container section .txt.about {font-size:32px;  top:calc(50% - 280px); line-height:50px;}
 
 #scroll-section-4 {background:none;}
-.scroll-container .sticky-bg {height:560vh;}
+.scroll-container .sticky-bg {height:400vh;}
 .scrl-bg-1 {z-index:5; background:url("/assets/images/scrl-bg-01.jpg") no-repeat center center; background-size:cover; width:40%; position:sticky; top:0; height:100vh; transform:translateY(50vh); margin:0 auto;}
 .scrl-bg-1 .overlay {z-index:6; position:sticky; top:0; width:100%; height:100%; background:#fff; opacity:0.5;}
 
@@ -115,7 +115,7 @@ span.cl-999 {color:#999;}
 
 /* bma parallax */
 #bma .pl-section#pl-section-1 {height:1000vh;}
-#bma .first-txt {width: min(1480px, calc(100% - 40px)); margin:0 auto; text-align:left; font-size:100px; font-weight:700; font-style:italic; position:sticky; left:0; top:calc(100% - 640px); line-height:1.15;}
+#bma .first-txt {width:1480px; margin:0 auto; text-align:left; font-size:100px; font-weight:700; font-style:italic; position:sticky; left:0; top:calc(100% - 640px); line-height:180px;}
 #bma .first-txt .t1 {color:#aaaaaa; opacity:0; line-height:1.2;}
 #bma .first-txt .t2 {color:#AAAAAA; opacity:0; line-height:1.2;}
 #bma .first-txt .t3 {color:#AAAAAA; opacity:0; line-height:1.2;}
@@ -123,79 +123,23 @@ span.cl-999 {color:#999;}
 #bma .canvas-sticky #pl-section-1 {transition:0.5s;}
 #bma .canvas-sticky #pl-section-1 {}
 
-#bma .tbox {z-index: 10; color: #fff; font-size: 68px; line-height: 1.2; text-align: center; opacity: 0; position: sticky; top: calc(50% - 80px); font-weight: 700; width: min(1480px, calc(100% - 48px)); margin:0 auto; }
+#bma .tbox {z-index: 10; color: #fff; font-size: 68px; line-height: 1.2; text-align: center; opacity: 0; position: sticky; top: calc(50% - 80px); font-weight: 700; width:1480px; margin:0 auto; }
 #bma .tbox .small {font-size:18px; font-weight:600;}
 #bma .tbox .big {font-size:54px; font-weight:700; font-style: italic; margin-top:10px; box-shadow:inset #ffffff59 0px -20px 0px 0px; display:inline; cursor:default;}
 #bma .tbox .big:hover {box-shadow:inset #ffffff59 0px -20px 0px 0px; }
 #bma .tbox.left {text-align:left;}
 #bma .tbox.right {text-align:right;}
-#bma .tbox2 {z-index: 10; color: #9b6767; font-size: 40px; line-height: 50px; text-align: center; opacity: 0; position: sticky; top: calc(50% - 100px); font-weight: 700; width: min(1480px, calc(100% - 48px)); margin:0 auto;}
+#bma .tbox2 {z-index: 10; color: #9b6767; font-size: 40px; line-height: 50px; text-align: center; opacity: 0; position: sticky; top: calc(50% - 100px); font-weight: 700; width:1480px; margin:0 auto;}
 
-/* 인라인 포트폴리오 카드 (모달 대체) */
-#bma .tbox.pofol-card {
-    top: calc(50% - 180px);
-    pointer-events: none;
-}
-#bma .tbox.pofol-card .pofol-card-inner {
-    display: flex;
-    align-items: center;
-    gap: 36px;
-    pointer-events: auto;
-}
-#bma .tbox.pofol-card.right .pofol-card-inner {
-    flex-direction: row-reverse;
-}
-#bma .tbox.pofol-card .pofol-meta {
-    flex: 1 1 auto;
-    min-width: 0;
-}
-#bma .tbox.pofol-card .pofol-desc {
-    margin-top: 12px;
-    font-size: 16px;
-    font-weight: 500;
-    font-style: normal;
-    color: rgba(255,255,255,0.72);
-    line-height: 1.5;
-}
-#bma .tbox.pofol-card .pofol-link {
-    display: inline-block;
-    margin-top: 18px;
-    padding: 10px 16px;
-    border: 1px solid rgba(255,255,255,0.45);
-    border-radius: 4px;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 600;
-    font-style: normal;
-    text-decoration: none;
-    letter-spacing: 0.02em;
-    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-}
-#bma .tbox.pofol-card .pofol-link:hover {
-    background: #fff;
-    color: #111;
-    border-color: #fff;
-}
-#bma .tbox.pofol-card .pofol-thumb {
-    flex: 0 0 min(420px, 38vw);
-    width: min(420px, 38vw);
-    overflow: hidden;
-    border-radius: 8px;
-    border: 1px solid rgba(255,255,255,0.18);
-    box-shadow: 0 24px 50px rgba(0,0,0,0.35);
-    background: rgba(255,255,255,0.06);
-}
-#bma .tbox.pofol-card .pofol-thumb img {
-    display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 10;
-    object-fit: cover;
-    transition: transform 0.35s ease;
-}
-#bma .tbox.pofol-card .pofol-thumb:hover img {
-    transform: scale(1.04);
-}
+/* 모달 대신 제목 아래 썸네일/링크 노출 (스크롤 애니메이션 구조는 유지) */
+#bma .tbox { top: calc(50% - 200px); }
+#bma .tbox .pofol-inline { margin-top: 18px; font-style: normal; font-weight: 500; }
+#bma .tbox .pofol-inline .pofol-thumb { display: inline-block; max-width: 420px; width: 38vw; border: 1px solid rgba(255,255,255,0.25); border-radius: 6px; overflow: hidden; vertical-align: top; }
+#bma .tbox .pofol-inline .pofol-thumb img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; }
+#bma .tbox .pofol-inline .pofol-desc { margin-top: 10px; font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.4; }
+#bma .tbox .pofol-inline .pofol-url { display: inline-block; margin-top: 8px; font-size: 14px; color: #fff; text-decoration: underline; word-break: break-all; }
+#bma .tbox.right .pofol-inline { text-align: right; }
+#bma .tbox.left .pofol-inline { text-align: left; }
 #bma #scroll-section-2 {}
 #bma .canvas-sticky {transition: 1000ms;}
 #bma .canvas-sticky.start-4 {background:#fff;}
@@ -297,16 +241,10 @@ span.cl-999 {color:#999;}
 .about_left ul li:nth-child(3) > p {animation-delay:0.6s}
 .about_left ul li:nth-child(4) > p {animation-delay:0.9s}
 
-.about_left ul li:nth-child(1) {width:min(360px, 100%);}
-.about_left ul li:nth-child(2) {width:min(500px, 100%); margin-top:30px;}
-.about_left ul li:nth-child(3) {width:min(700px, 100%); margin-top:30px;}
-.about_left ul li:nth-child(4) {width:min(640px, 100%); margin-top:30px;}
-
-.about_left .skill_img img {width: min(700px, 100%); height: auto;}
-.about_left .skill_wrap {margin-top: 40px; max-width: min(700px, 100%);}
-.about_left .skill_wrap .line1,
-.about_left .skill_wrap .line2,
-.about_left .skill_wrap .line3 {display: none;}
+.about_left ul li:nth-child(1) {width:360px;}
+.about_left ul li:nth-child(2) {width:500px; margin-top:30px;}
+.about_left ul li:nth-child(3) {width:700px; margin-top:30px;}
+.about_left ul li:nth-child(4) {width:400px; margin-top:30px;}
 
 @keyframes txt_after{
     0%{width:0; left:0}
@@ -329,205 +267,64 @@ a.mouse{display:block;overflow:hidden;border:1px solid #fff;border-radius:20px;b
 a.mouse span.wheel{display:block;background:#fff;position:absolute;top:4px;left:50%;margin-left:-2px;height:7px;width:4px;border-radius:2px;}
 #portWrap1.on a.mouse {opacity:1;}
 
-/* ========== Responsive ========== */
-html, body {
-    overflow-x: hidden;
-    max-width: 100%;
-}
-
-#bma .first-txt {
-    width: min(1480px, calc(100% - 40px));
-}
-
-@media (max-width: 1200px) {
-    #bma .first-txt {
-        font-size: clamp(42px, 8vw, 72px);
-        line-height: 1.15;
-        top: calc(100% - 420px);
-    }
-    #bma .tbox .big {
-        font-size: clamp(28px, 4.5vw, 42px);
-    }
+/* 좁은 화면: 고정폭만 줄이고 sticky/스크롤 구조는 유지 */
+@media (max-width: 1480px) {
+    #bma .first-txt,
+    #bma .tbox,
     #bma .tbox2 {
-        font-size: clamp(22px, 3.2vw, 32px);
-        line-height: 1.45;
-        width: min(920px, calc(100% - 40px));
-    }
-    #bma .tbox.pofol-card .pofol-thumb {
-        flex-basis: min(340px, 42vw);
-        width: min(340px, 42vw);
-    }
-    .bma-bot-tit {
-        font-size: clamp(36px, 6vw, 56px);
-        line-height: 1.2;
-        margin-top: 120px;
-    }
-    .bmabot-contents .bmabot-cont .settingrow .img {
-        width: min(960px, calc(100% - 32px));
-        flex-wrap: wrap;
-        gap: 24px;
-    }
-    .about_left ul {
-        width: min(650px, calc(100% - 40px));
-        margin-left: 5%;
+        width: calc(100% - 48px);
+        max-width: 1480px;
+        box-sizing: border-box;
     }
 }
-
 @media (max-width: 900px) {
     #bma .first-txt {
-        top: calc(100% - 360px);
-        font-size: clamp(32px, 7vw, 48px);
+        font-size: 56px;
     }
-    #bma .tbox.pofol-card {
-        top: calc(50% - 220px);
+    #bma .tbox .big {
+        font-size: 36px;
     }
-    #bma .tbox.pofol-card .pofol-card-inner,
-    #bma .tbox.pofol-card.right .pofol-card-inner {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 18px;
-        text-align: left;
+    #bma .tbox .pofol-inline .pofol-thumb {
+        width: min(420px, 86vw);
+        max-width: 100%;
     }
-    #bma .tbox.pofol-card.left,
-    #bma .tbox.pofol-card.right {
-        text-align: left;
-    }
-    #bma .tbox.pofol-card .pofol-thumb {
-        width: 100%;
-        flex-basis: auto;
-        max-width: 520px;
-    }
-    #bma .scrl-bg-1 {
-        width: 100%;
-        transform: translateY(20vh);
-    }
-    .scroll-container section .txt.about {
-        top: 10vh;
-        font-size: 22px;
+    #bma .tbox2 {
+        font-size: 24px;
         line-height: 1.45;
     }
     .about_left ul {
-        margin-left: 0;
-        margin-top: 0;
         width: calc(100% - 32px);
-        padding: 0 16px;
+        margin-left: 16px;
     }
-    .about_left ul li p {
-        font-size: 15px;
-    }
-    .about_left .skill_wrap {
-        padding: 0 16px;
-        margin-top: 24px;
-    }
-    .bmabot-tab {
-        width: min(380px, calc(100% - 32px));
-    }
-    .bmabot-contents .bmabot-cont .videorow {
-        width: min(400px, calc(100% - 32px));
+    .about_left .skill_img img {
+        width: 100% !important;
+        max-width: 700px;
+        height: auto;
     }
     .bmabot-contents .bmabot-cont .settingrow .img {
-        width: min(960px, calc(100% - 32px));
+        width: calc(100% - 32px);
         flex-wrap: wrap;
-        gap: 24px;
-    }
-    .bmabot-contents .bmabot-cont .settingrow .img img {
-        width: min(160px, 28vw);
-    }
-    .bmabot-contents .bmabot-cont .settingrow .text {
-        font-size: 16px;
-        padding: 0 16px;
-    }
-    .bmabot-contents .bmabot-cont .imgrow img {
-        max-width: calc(100vw - 32px);
-        height: auto;
+        gap: 16px;
     }
 }
-
 @media (max-width: 640px) {
     #bma .first-txt {
-        top: calc(100% - 280px);
-        font-size: clamp(28px, 9vw, 40px);
+        font-size: 36px;
+        top: calc(100% - 420px);
     }
     #bma .tbox {
-        top: calc(50% - 40px);
-    }
-    #bma .tbox.pofol-card {
-        top: calc(50% - 200px);
-    }
-    #bma .tbox .small {
-        font-size: 13px;
+        top: calc(50% - 160px);
     }
     #bma .tbox .big {
-        font-size: clamp(24px, 7vw, 32px);
-        box-shadow: inset rgba(255,255,255,0.35) 0 -10px 0 0;
+        font-size: 28px;
     }
-    #bma .tbox.pofol-card .pofol-desc {
+    #bma .tbox .pofol-inline .pofol-desc,
+    #bma .tbox .pofol-inline .pofol-url {
         font-size: 13px;
     }
-    #bma .tbox.pofol-card .pofol-link {
-        font-size: 12px;
-        padding: 8px 12px;
-        word-break: break-all;
-    }
-    .scroll-container .sticky-bg {
-        height: 480vh;
-    }
-    #bma .scrl-bg-1 {
-        transform: none;
-        height: 42vh;
-        top: 8vh;
-    }
-    #bma .scrl-bg-1 video,
-    #bma .scrl-bg-1 iframe {
-        width: 180%;
-        height: 180%;
-    }
-    .scroll-container section .txt {
-        font-size: clamp(22px, 6vw, 32px);
-        line-height: 1.35;
-        padding: 0 16px;
-        top: calc(50% - 60px);
-    }
-    .scroll-container section .txt.about {
-        top: 48vh;
-        position: sticky;
-    }
-    .about_left .skill_wrap {
-        display: none;
-    }
-    .about_left ul li {
-        display: block;
-        width: 100% !important;
-    }
-    .about_left ul li p {
-        font-size: 14px;
-        line-height: 1.7;
-    }
     .bma-bot-tit {
-        margin-top: 80px;
-        font-size: 32px;
-    }
-    .bmabot-tab ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 8px 0;
-    }
-    .bmabot-tab ul li {
-        flex: 1 1 33%;
-    }
-    .bmabot-contents {
-        margin-top: 32px;
-        margin-bottom: 80px;
-    }
-    a.mouse {
-        bottom: 12px;
-        transform: scale(0.9);
-    }
-    footer {
-        height: auto;
-        padding: 48px 16px;
-        margin-top: 48px;
-        font-size: 12px;
-        text-align: center;
+        font-size: 40px;
+        line-height: 1.2;
+        margin-top: 100px;
     }
 }
