@@ -14,7 +14,7 @@
 .canvas-container {position:absolute; top:0; width:100%; height:100%;}
 .canvas-sticky {position:sticky; top:0; height:100vh; background:#000; z-index:10; transition:500ms;}
 .canvas-sticky.white {background:#fff;}
-.canvas-sticky.start-2 {background:#ccc;}
+.canvas-sticky.start-2 {background:#050505;}
 .canvas-sticky.start-4 {background:#fff;}
 .canvas-container.end-white .canvas-sticky {background:#fff;}
 .pl-section-box {position:relative; height: calc(100vh - 100px); display:flex; padding-top:100px; text-align:center;}
@@ -143,6 +143,12 @@ span.cl-999 {color:#999;}
     overflow: hidden;
     position: relative;
     background: rgba(0,0,0,0.25);
+    /* 등장 시 위에서 아래로 스르륵 공개 */
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+#bma .tbox.is-visible .pofol-inline .pofol-thumb {
+    clip-path: inset(0 0 0 0);
 }
 #bma .tbox .pofol-inline .pofol-thumb img {
     display: block;
@@ -154,15 +160,15 @@ span.cl-999 {color:#999;}
     object-position: top center;
     transform: translate3d(0, 0, 0);
     will-change: transform;
-    animation: pofol-thumb-pan 9s ease-in-out infinite alternate;
+    animation: none;
+}
+/* 화면에 보일 때만 상단→하단 패닝 시작 (미리 돌아가 아래가 보이는 문제 방지) */
+#bma .tbox.is-visible .pofol-inline .pofol-thumb img {
+    animation: pofol-thumb-pan 7s ease-in-out 0.9s infinite alternate;
 }
 @keyframes pofol-thumb-pan {
-    0%, 8% { transform: translate3d(0, 0, 0); }
-    92%, 100% { transform: translate3d(0, calc(-100% + 220px), 0); }
-}
-/* 포폴 간격이 짧아진 만큼 패닝도 조금 빠르게 */
-#bma .tbox .pofol-inline .pofol-thumb img {
-    animation-duration: 6.5s;
+    0%, 10% { transform: translate3d(0, 0, 0); }
+    90%, 100% { transform: translate3d(0, calc(-100% + 220px), 0); }
 }
 #bma .tbox .pofol-inline .pofol-desc { margin-top: 10px; font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.4; }
 #bma .tbox .pofol-inline .pofol-url { display: inline-block; margin-top: 8px; font-size: 14px; color: #fff; text-decoration: underline; word-break: break-all; }
@@ -170,9 +176,12 @@ span.cl-999 {color:#999;}
 #bma .tbox.right .pofol-inline .pofol-thumb { margin-left: auto; }
 #bma .tbox.left .pofol-inline { text-align: left; }
 
-/* 포트폴리오 구간: 작품 간 텀·전체 스크롤 부담 축소 */
-#scroll-section-2 .trigger {
-    height: 75vh;
+/* 포트폴리오: pin 단위로 sticky 범위 제한 */
+#scroll-section-2 .pofol-pin {
+    position: relative;
+}
+#scroll-section-2 .pofol-pin .trigger {
+    height: 85vh;
 }
 #scroll-section-2 .tbox {
     pointer-events: none;
@@ -180,10 +189,27 @@ span.cl-999 {color:#999;}
 #scroll-section-2 .tbox .pofol-inline {
     pointer-events: auto;
 }
-/* 다음 문구 구간이 마지막 포폴 sticky 위에 자연스럽게 올라오도록 */
-#scroll-section-3 {
+
+/* 참여물 문구: 포폴 섹션과 분리된 전용 구간 */
+#scroll-section-3 .pofol-closing {
     position: relative;
-    z-index: 12;
+    min-height: 160vh;
+}
+#scroll-section-3 .pofol-closing .trigger_8 {
+    height: 140vh;
+}
+#scroll-section-3 .tbox2 {
+    color: #e8e0e0;
+    text-shadow: 0 2px 24px rgba(0,0,0,0.65);
+    /* 수동 제어 — 기본 숨김 (JS가 opacity 조절) */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    will-change: opacity, transform;
+}
+#scroll-section-3 .tbox2.is-closing-show {
+    visibility: visible;
+    pointer-events: auto;
 }
 
 .about_left .skill_wrap {
@@ -283,20 +309,20 @@ span.cl-999 {color:#999;}
 .about_left ul li {position:relative; line-height:1.5; font-size:16px; display: inline-flex;text-align:left; width:auto !important;}
 .about_left ul li p {font-weight:normal; font-size:20px;  position:relative; line-height:1.5;  opacity:0; display: inline-block; text-align:left;}
 .about_left ul li p a{text-decoration:underline; color:#fff;}
-.about_left ul li:after {content: ''; position: absolute; display: block; left: 0; top: 0; width: 0%; height: 100%; background-color: #fff;}
+.about_left ul li:after {content: ''; position: absolute; display: block; left: 0; top: 0; width: 0%; height: 100%; background-color: #fff; pointer-events: none;}
 
-.about_left.on ul li p {animation:txt_unit .8s forwards ease-in-out;}
-.about_left.on ul li:after {animation: txt_after .8s forwards ease-in-out; animation-delay: 2s;}
+/* 흰색 와이프와 텍스트 등장 타이밍을 동일 딜레이·동일 길이로 맞춤 */
+.about_left.on ul li p {animation: txt_unit 0.9s forwards ease-in-out; animation-play-state: running;}
+.about_left.on ul li:after {animation: txt_after 0.9s forwards ease-in-out; animation-play-state: running;}
 
-.about_left ul li:nth-child(1):after {animation-delay: 0s;}
-.about_left ul li:nth-child(2):after {animation-delay: 0.3s;}
-.about_left ul li:nth-child(3):after {animation-delay: 0.6s;}
-.about_left ul li:nth-child(4):after {animation-delay: 0.9s;}
-
-.about_left ul li:nth-child(1) > p {animation-delay:0s}
-.about_left ul li:nth-child(2) > p {animation-delay:0.3s}
-.about_left ul li:nth-child(3) > p {animation-delay:0.6s}
-.about_left ul li:nth-child(4) > p {animation-delay:0.9s}
+.about_left.on ul li:nth-child(1):after,
+.about_left.on ul li:nth-child(1) > p {animation-delay: 0.05s;}
+.about_left.on ul li:nth-child(2):after,
+.about_left.on ul li:nth-child(2) > p {animation-delay: 0.35s;}
+.about_left.on ul li:nth-child(3):after,
+.about_left.on ul li:nth-child(3) > p {animation-delay: 0.65s;}
+.about_left.on ul li:nth-child(4):after,
+.about_left.on ul li:nth-child(4) > p {animation-delay: 0.95s;}
 
 .about_left ul li:nth-child(1) {width:360px;}
 .about_left ul li:nth-child(2) {width:500px; margin-top:30px;}
@@ -305,14 +331,15 @@ span.cl-999 {color:#999;}
 
 @keyframes txt_after{
     0%{width:0; left:0}
-    50%{width:100%; left:0}
+    45%{width:100%; left:0}
+    55%{width:100%; left:0}
     100%{width:0%; left:100%}
 }
 
 @keyframes txt_unit{
     0%{opacity:0}
-    49%{opacity:0}
-    50%{opacity:1}
+    44%{opacity:0}
+    45%{opacity:1}
     100%{opacity:1}
 }
 
@@ -347,8 +374,8 @@ a.mouse span.wheel{display:block;background:#fff;position:absolute;top:4px;left:
         height: 200px;
     }
     @keyframes pofol-thumb-pan {
-        0%, 8% { transform: translate3d(0, 0, 0); }
-        92%, 100% { transform: translate3d(0, calc(-100% + 200px), 0); }
+        0%, 10% { transform: translate3d(0, 0, 0); }
+        90%, 100% { transform: translate3d(0, calc(-100% + 200px), 0); }
     }
     #bma .tbox2 {
         font-size: 24px;

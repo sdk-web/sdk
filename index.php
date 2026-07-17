@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="/assets/css/reset.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
 <link rel="stylesheet" href="/assets/css/jquery.scrollbar.css"/>
-<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/main.css?v=20260718d">
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/vendors/jquery.easings.min.js"></script>
@@ -59,81 +59,106 @@
                         <section id="scroll-section-2" data-canvas="1">
                             <div class="context">
                                 <div class="spaceer h50"></div>
-                                <div class="tbox animate_1 left font-montserrat" data-val="1" data-name="(주)덕양산업 *패럴렉스기법 사용" data-url="https://dyauto.songdk.kro.kr/">
-                                    <div class="small">Portfolio</div>
-                                    <div class="big">(주)덕양산업</div>
-                                    <div class="pofol-inline">
-                                        <a class="pofol-thumb" href="https://dyauto.songdk.kro.kr/" target="_blank" rel="noopener"><img src="/assets/portfolio/site1.webp" alt="(주)덕양산업"></a>
-                                        <p class="pofol-desc">패럴렉스기법 사용</p>
-                                        <a class="pofol-url" href="https://dyauto.songdk.kro.kr/" target="_blank" rel="noopener">https://dyauto.songdk.kro.kr/</a>
+
+                                <!-- 각 .pofol-pin 이 sticky 범위를 제한 → 작품끼리/문구와 겹치지 않음 -->
+                                <div class="pofol-pin">
+                                    <div class="tbox animate_1 left font-montserrat" data-val="1" data-name="(주)덕양산업 *패럴렉스기법 사용" data-url="https://dyauto.songdk.kro.kr/">
+                                        <div class="small">Portfolio</div>
+                                        <div class="big">(주)덕양산업</div>
+                                        <div class="pofol-inline">
+                                            <a class="pofol-thumb" href="https://dyauto.songdk.kro.kr/" target="_blank" rel="noopener"><img src="/assets/portfolio/site1.webp" alt="(주)덕양산업"></a>
+                                            <p class="pofol-desc">패럴렉스기법 사용</p>
+                                            <a class="pofol-url" href="https://dyauto.songdk.kro.kr/" target="_blank" rel="noopener">https://dyauto.songdk.kro.kr/</a>
+                                        </div>
                                     </div>
+                                    <div class="trigger trigger_1"></div>
                                 </div>
-                                <div class="trigger trigger_1"></div>
-                                <div class="tbox animate_2 right font-montserrat" data-val="2" data-name="위뷰티 *플러그인 커스텀" data-url="http://www.webeauty.co.kr/">
-                                    <div class="small">Portfolio</div>
-                                    <div class="big">위뷰티</div>
-                                    <div class="pofol-inline">
-                                        <a class="pofol-thumb" href="http://www.webeauty.co.kr/" target="_blank" rel="noopener"><img src="/assets/portfolio/site2.webp" alt="위뷰티"></a>
-                                        <p class="pofol-desc">플러그인 커스텀</p>
-                                        <a class="pofol-url" href="http://www.webeauty.co.kr/" target="_blank" rel="noopener">http://www.webeauty.co.kr/</a>
+
+                                <div class="pofol-pin">
+                                    <div class="tbox animate_2 right font-montserrat" data-val="2" data-name="위뷰티 *플러그인 커스텀" data-url="http://www.webeauty.co.kr/">
+                                        <div class="small">Portfolio</div>
+                                        <div class="big">위뷰티</div>
+                                        <div class="pofol-inline">
+                                            <a class="pofol-thumb" href="http://www.webeauty.co.kr/" target="_blank" rel="noopener"><img src="/assets/portfolio/site2.webp" alt="위뷰티"></a>
+                                            <p class="pofol-desc">플러그인 커스텀</p>
+                                            <a class="pofol-url" href="http://www.webeauty.co.kr/" target="_blank" rel="noopener">http://www.webeauty.co.kr/</a>
+                                        </div>
                                     </div>
+                                    <div class="trigger trigger_2"></div>
                                 </div>
-                                <div class="trigger trigger_2"></div>
-                                <div class="tbox animate_3 left font-montserrat" data-val="3" data-name="대한환경" data-url="http://www.daehanwater.kr/">
-                                    <div class="small">Portfolio</div>
-                                    <div class="big">대한환경</div>
-                                    <div class="pofol-inline">
-                                        <a class="pofol-thumb" href="http://www.daehanwater.kr/" target="_blank" rel="noopener"><img src="/assets/portfolio/site3.webp" alt="대한환경"></a>
-                                        <a class="pofol-url" href="http://www.daehanwater.kr/" target="_blank" rel="noopener">http://www.daehanwater.kr/</a>
+
+                                <div class="pofol-pin">
+                                    <div class="tbox animate_3 left font-montserrat" data-val="3" data-name="대한환경" data-url="http://www.daehanwater.kr/">
+                                        <div class="small">Portfolio</div>
+                                        <div class="big">대한환경</div>
+                                        <div class="pofol-inline">
+                                            <a class="pofol-thumb" href="http://www.daehanwater.kr/" target="_blank" rel="noopener"><img src="/assets/portfolio/site3.webp" alt="대한환경"></a>
+                                            <a class="pofol-url" href="http://www.daehanwater.kr/" target="_blank" rel="noopener">http://www.daehanwater.kr/</a>
+                                        </div>
                                     </div>
+                                    <div class="trigger trigger_3"></div>
                                 </div>
-                                <div class="trigger trigger_3"></div>
-                                <div class="tbox animate_4 right font-montserrat" data-val="4" data-name="인천스마트시티 *포스기 전용 (F11 전체화면기준)" data-url="https://incheonsmart.cafe24.com/">
-                                    <div class="small">Portfolio</div>
-                                    <div class="big">인천스마트시티</div>
-                                    <div class="pofol-inline">
-                                        <a class="pofol-thumb" href="https://incheonsmart.cafe24.com/" target="_blank" rel="noopener"><img src="/assets/portfolio/site4.webp" alt="인천스마트시티"></a>
-                                        <p class="pofol-desc">포스기 전용 (F11 전체화면기준)</p>
-                                        <a class="pofol-url" href="https://incheonsmart.cafe24.com/" target="_blank" rel="noopener">https://incheonsmart.cafe24.com/</a>
+
+                                <div class="pofol-pin">
+                                    <div class="tbox animate_4 right font-montserrat" data-val="4" data-name="인천스마트시티 *포스기 전용 (F11 전체화면기준)" data-url="https://incheonsmart.cafe24.com/">
+                                        <div class="small">Portfolio</div>
+                                        <div class="big">인천스마트시티</div>
+                                        <div class="pofol-inline">
+                                            <a class="pofol-thumb" href="https://incheonsmart.cafe24.com/" target="_blank" rel="noopener"><img src="/assets/portfolio/site4.webp" alt="인천스마트시티"></a>
+                                            <p class="pofol-desc">포스기 전용 (F11 전체화면기준)</p>
+                                            <a class="pofol-url" href="https://incheonsmart.cafe24.com/" target="_blank" rel="noopener">https://incheonsmart.cafe24.com/</a>
+                                        </div>
                                     </div>
+                                    <div class="trigger trigger_4"></div>
                                 </div>
-                                <div class="trigger trigger_4"></div>
-                                <div class="tbox animate_5 left font-montserrat" data-val="5" data-name="백아바이오티" data-url="https://baekabioty.songdk.kro.kr/">
-                                    <div class="small">Portfolio</div>
-                                    <div class="big">백아바이오티</div>
-                                    <div class="pofol-inline">
-                                        <a class="pofol-thumb" href="https://baekabioty.songdk.kro.kr/" target="_blank" rel="noopener"><img src="/assets/portfolio/site5.webp" alt="백아바이오티"></a>
-                                        <a class="pofol-url" href="https://baekabioty.songdk.kro.kr/" target="_blank" rel="noopener">https://baekabioty.songdk.kro.kr/</a>
+
+                                <div class="pofol-pin">
+                                    <div class="tbox animate_5 left font-montserrat" data-val="5" data-name="백아바이오티" data-url="https://baekabioty.songdk.kro.kr/">
+                                        <div class="small">Portfolio</div>
+                                        <div class="big">백아바이오티</div>
+                                        <div class="pofol-inline">
+                                            <a class="pofol-thumb" href="https://baekabioty.songdk.kro.kr/" target="_blank" rel="noopener"><img src="/assets/portfolio/site5.webp" alt="백아바이오티"></a>
+                                            <a class="pofol-url" href="https://baekabioty.songdk.kro.kr/" target="_blank" rel="noopener">https://baekabioty.songdk.kro.kr/</a>
+                                        </div>
                                     </div>
+                                    <div class="trigger trigger_5"></div>
                                 </div>
-                                <div class="trigger trigger_5"></div>
-                                <div class="tbox animate_6 right font-montserrat" data-val="6" data-name="ALL PARKING" data-url="http://all-parking.co.kr/">
-                                    <div class="small">Portfolio</div>
-                                    <div class="big">ALL PARKING</div>
-                                    <div class="pofol-inline">
-                                        <a class="pofol-thumb" href="http://all-parking.co.kr/" target="_blank" rel="noopener"><img src="/assets/portfolio/site6.webp" alt="ALL PARKING"></a>
-                                        <a class="pofol-url" href="http://all-parking.co.kr/" target="_blank" rel="noopener">http://all-parking.co.kr/</a>
+
+                                <div class="pofol-pin">
+                                    <div class="tbox animate_6 right font-montserrat" data-val="6" data-name="ALL PARKING" data-url="http://all-parking.co.kr/">
+                                        <div class="small">Portfolio</div>
+                                        <div class="big">ALL PARKING</div>
+                                        <div class="pofol-inline">
+                                            <a class="pofol-thumb" href="http://all-parking.co.kr/" target="_blank" rel="noopener"><img src="/assets/portfolio/site6.webp" alt="ALL PARKING"></a>
+                                            <a class="pofol-url" href="http://all-parking.co.kr/" target="_blank" rel="noopener">http://all-parking.co.kr/</a>
+                                        </div>
                                     </div>
+                                    <div class="trigger trigger_6"></div>
                                 </div>
-                                <div class="trigger trigger_6"></div>
-                                <div class="tbox animate_7 left font-montserrat" data-val="7" data-name="Seoul ADEX 2023" data-url="https://seouladex.com/">
-                                    <div class="small">Portfolio</div>
-                                    <div class="big">Seoul ADEX 2023</div>
-                                    <div class="pofol-inline">
-                                        <a class="pofol-thumb" href="https://seouladex.com/" target="_blank" rel="noopener"><img src="/assets/portfolio/site7.webp" alt="Seoul ADEX 2023"></a>
-                                        <a class="pofol-url" href="https://seouladex.com/" target="_blank" rel="noopener">https://seouladex.com/</a>
+
+                                <div class="pofol-pin">
+                                    <div class="tbox animate_7 left font-montserrat" data-val="7" data-name="Seoul ADEX 2023" data-url="https://seouladex.com/">
+                                        <div class="small">Portfolio</div>
+                                        <div class="big">Seoul ADEX 2023</div>
+                                        <div class="pofol-inline">
+                                            <a class="pofol-thumb" href="https://seouladex.com/" target="_blank" rel="noopener"><img src="/assets/portfolio/site7.webp" alt="Seoul ADEX 2023"></a>
+                                            <a class="pofol-url" href="https://seouladex.com/" target="_blank" rel="noopener">https://seouladex.com/</a>
+                                        </div>
                                     </div>
+                                    <div class="trigger trigger_7"></div>
                                 </div>
-                                <div class="trigger trigger_7"></div>
                             </div>
                         </section>
+                        <!-- 포폴 7개가 완전히 끝난 뒤에만 이 섹션 진입 → 문구 등장 -->
                         <section id="scroll-section-3" data-canvas="no" data-before="1">
                             <div class="context">
-                                <div class="tbox2 animate_8">
-                                    모든 퍼블리싱 작업들은 100% 참여물입니다. <br>
-									PHP 환경으로 간단한 관리자 및 게시판 작업도 가능합니다.
+                                <div class="pofol-closing">
+                                    <div class="tbox2 animate_8">
+                                        모든 퍼블리싱 작업들은 100% 참여물입니다. <br>
+                                        PHP 환경으로 간단한 관리자 및 게시판 작업도 가능합니다.
+                                    </div>
+                                    <div class="trigger trigger_8"></div>
                                 </div>
-                                <div class="trigger trigger_8"></div> 
                             </div>
                         </section>
                         <section id="scroll-section-4" data-canvas="no" data-before="2">
@@ -158,8 +183,8 @@
                                     </div>
                                     <div class="trigger_bg"></div>
                                     <!-- <div class="h100"></div> -->
-                                    <div class="txt animate_11 about">
-										<div class="about_left on">
+									<div class="txt animate_11 about">
+										<div class="about_left">
 											<ul>
 												<li><p>송대경 / 1994.01.05 / 010-7521-7550</p></li>
 												<li><p>eoruddl09@naver.com / 인천광역시 서구</p></li>
@@ -266,7 +291,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
-    <script src="/assets/js/parallax-main.js"></script>
+    <script src="/assets/js/parallax-main.js?v=20260718d"></script>
 	<script src="/assets/js/popup.js"></script>
     <script>
         $(function(){
@@ -288,6 +313,16 @@
         });
         
         // 영상/소개: sticky-bg 가 화면에 보이는 동안 재생·텍스트 유지 (기존 offset 계산 보정)
+        var aboutWipePlayed = false;
+        function restartAboutWipe() {
+            var about = document.querySelector(".about_left");
+            if (!about) return;
+            about.classList.remove("on");
+            // 애니메이션 재시작용 reflow
+            void about.offsetWidth;
+            about.classList.add("on");
+            aboutWipePlayed = true;
+        }
         function syncAboutVideo() {
             var sticky = document.querySelector(".sticky-bg");
             var about = document.querySelector(".about_left");
@@ -297,18 +332,23 @@
 
             var winH = window.innerHeight || document.documentElement.clientHeight;
             var rect = sticky.getBoundingClientRect();
-            var inView = rect.top < winH * 0.85 && rect.bottom > winH * 0.2;
+            var inView = rect.top < winH * 0.75 && rect.bottom > winH * 0.25;
             var pastSkill = skillTit && skillTit.getBoundingClientRect().top < winH * 0.5;
 
             if (inView && !pastSkill) {
                 video.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-                about.classList.add("on");
+                if (!aboutWipePlayed) {
+                    restartAboutWipe();
+                } else if (!about.classList.contains("on")) {
+                    about.classList.add("on");
+                }
             } else if (pastSkill || rect.bottom <= 0) {
                 video.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
                 // 지나간 뒤에는 텍스트가 바로 꺼지지 않도록 on 유지
             } else if (rect.top >= winH) {
                 video.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
                 about.classList.remove("on");
+                aboutWipePlayed = false;
             }
         }
         window.addEventListener("scroll", syncAboutVideo, { passive: true });

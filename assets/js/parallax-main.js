@@ -29,16 +29,16 @@ const sceneInfo = [
         }
     },
     {
-        // 1 — 포트폴리오: 스크롤 부담 줄이고 간격 타이트하게
-        heightNum: 7,
+        // 1 — 포폴 7개만 (문구는 section-3)
+        heightNum: 10,
         scrollHeight: 0,
         objs: {
             container: document.querySelector('#scroll-section-2')
         }
     },
     {
-        // 2  
-        heightNum: 2,
+        // 2 — 참여물 문구 전용 (캔버스 마지막 프레임 유지)
+        heightNum: 2.5,
         scrollHeight: 0,
         objs: {
             container: document.querySelector('#scroll-section-3')
@@ -101,27 +101,26 @@ const updateImage = (index, arrNum) => {
 
 
 // 캔버스 확인
+// 캔버스 프레임 = scroll-section-2 진행률에 매핑
+// (pl-section 1000vh 기준이면 프레임이 거의 안 넘어가 마지막 이미지와 문구가 어긋남)
 const checkCanvas = (scrollNum, currentTop) => {
     if (document.querySelector('#paral-' + scrollNum)) {
-        const scrollNum_1 = scrollNum - 1
-        // const scrollTop = html.scrollTop;
-        const scrollTop = currentTop;
-        const maxScrollTop = $("#pl-section-" + scrollNum).height() - window.innerHeight;
-        const scrollFraction = scrollTop / maxScrollTop;
-        // console.log("maxScrollTop: " + maxScrollTop);
-        // console.log("scrollFraction: " + scrollFraction);
+        const scrollNum_1 = scrollNum - 1;
+        const sectionEl = document.querySelector('#scroll-section-2');
+        const sectionH = sectionEl
+            ? sectionEl.offsetHeight
+            : $("#pl-section-" + scrollNum).height();
+        const maxScrollTop = Math.max(1, sectionH - window.innerHeight);
+        const scrollFraction = Math.min(1, Math.max(0, currentTop / maxScrollTop));
         var intFrameCount = frameCount[scrollNum_1];
         intFrameCount = intFrameCount - 1;
-        console.log("intFrameCount: " + intFrameCount);
-        // intFrameCount = intFrameCount;
         const frameIndex = Math.min(
             intFrameCount,
             Math.ceil(scrollFraction * frameCount[scrollNum_1])
         );
         let frameIndexInt = frameIndex + 1;
-        console.log("frameIndex: " + frameIndexInt);
+        console.log("frameIndex: " + frameIndexInt + " / fraction: " + scrollFraction.toFixed(3));
         requestAnimationFrame(() => updateImage(frameIndex, scrollNum_1))
-        // requestAnimationFrame(() => updateImage(frameIndex + 1,scrollNum_1))
     }
 };
 
@@ -204,39 +203,55 @@ updateImage(0, 0);
 function setLayout() {
     // 각 Scroll 섹션에 높이를 셋팅하는 함수.
     for (let i = 0; i < sceneInfo.length; i++) {
-        if (i == 4) {
-            sceneInfo[i].scrollHeight = document.querySelector("#scroll-section-5").height;
+        var container = sceneInfo[i].objs.container;
+        if (!container) continue;
+
+        if (i === 1 || i === 2) {
+            // 포폴/문구: 강제 height 가 콘텐츠보다 작으면 trigger 가 겹쳐
+            // 참여물 문구가 포폴보다 먼저 뜨는 버그가 난다 → 실측 높이 이상 확보
+            container.style.height = "auto";
+            var contentH = container.scrollHeight;
+            sceneInfo[i].scrollHeight = Math.max(
+                sceneInfo[i].heightNum * window.innerHeight,
+                contentH
+            );
+        } else if (i == 4) {
+            container.style.height = "auto";
+            sceneInfo[i].scrollHeight = Math.max(
+                container.scrollHeight,
+                sceneInfo[i].heightNum * window.innerHeight
+            );
         } else {
             sceneInfo[i].scrollHeight = sceneInfo[i].heightNum * window.innerHeight;
         }
-        // sceneInfo의 scrollHeight 값은 (window.innerHeight)웹페이지 전체 높이 x (heightNum) 5 이다.
-        sceneInfo[i].objs.container.style.height = `${sceneInfo[i].scrollHeight}px`
-        // objs객체 안에 container에 id가 scroll-section-__ 인 태그들의 style 속성을 변경 시키는데.
-        // 높이 값을 scrollHeight 값으로 모두 적용 시켜준다.
+        container.style.height = sceneInfo[i].scrollHeight + "px";
     }
 
     var winW = window.innerWidth;
     var winH = window.innerHeight;
-
-    // var canvas2Width = winW / canvas2.width;
-    // var canvas2Height = winH / canvas2.height;
-    // var maxRatio2 =  Math.max(canvas2Width, canvas2Height);
-    // document.querySelector("#paral-2").style.cssText = "transform: translate(-50%, -50%) scale("+maxRatio2+","+maxRatio2+")";
-
     var canvas1Width = winW / canvas1.width;
     var canvas1Height = winH / canvas1.height;
     var maxRatio1 = Math.max(canvas1Width, canvas1Height);
     document.querySelector("#paral-1").style.cssText = "transform: translate(-50%, -50%) scale(" + maxRatio1 + "," + maxRatio1 + ")";
+
+    if (window.__bmaScrollController) {
+        window.__bmaScrollController.update(true);
+    }
 }
 
 window.addEventListener("load", function (event) {
     setLayout();
     $(".parallax-wrap").addClass("on");
-}); // 웹페이지가 Load되면 setLayout함수 실행시켜주기.
-window.addEventListener('resize', setLayout); // 웹페이지 창 크기가 변경되면 seyLayout의 함수를 재실행 시킨다.
+    syncClosingCopy();
+});
+window.addEventListener('resize', function () {
+    setLayout();
+    syncClosingCopy();
+});
 
 // 텍스트 애니메이션 시작 
 var controller = new ScrollMagic.Controller();
+window.__bmaScrollController = controller;
 var animateElem = [".animate_1", ".animate_2", ".animate_3", ".animate_4", ".animate_5", ".animate_6", ".animate_7", ".animate_8", ".animate_9", ".animate_10", ".animate_11", ".animate_12"];
 var triggerElem = [".trigger_1", ".trigger_2", ".trigger_3", ".trigger_4", ".trigger_5", ".trigger_6", ".trigger_7", ".trigger_8", ".trigger_9", ".trigger_10", ".trigger_11", ".trigger_12"];
 
@@ -245,7 +260,17 @@ for (var i = 0; i < animateElem.length; i++) {
     var currentTriggerElem = triggerElem[i];
     var isPofol = i >= 0 && i <= 6;
     var isAbout = currentAnimateElem === ".animate_11";
-    var isLastPofol = i === 6;
+    var isClosingCopy = currentAnimateElem === ".animate_8";
+
+    // animate_8 은 ScrollMagic 으로 돌리면 포폴보다 먼저 뜨는 문제 → 수동 제어
+    if (isClosingCopy) {
+        continue;
+    }
+
+    // 트리거가 없으면 스킵 (없는 .trigger_12 등)
+    if (!document.querySelector(currentTriggerElem) || !document.querySelector(currentAnimateElem)) {
+        continue;
+    }
 
     var timeline = new TimelineMax();
 
@@ -264,23 +289,20 @@ for (var i = 0; i < animateElem.length; i++) {
 
     var tween_opacity = new TimelineMax();
     if (isAbout) {
-        // 소개 텍스트: 읽을 시간 확보
         tween_opacity
-            .to(currentAnimateElem, 0.25, {
+            .to(currentAnimateElem, 0.2, {
                 ease: Linear.easeNone,
                 opacity: 1
             })
-            .to(currentAnimateElem, 0.25, {
+            .to(currentAnimateElem, 0.2, {
                 ease: Linear.easeNone,
                 opacity: 1
-            }, "+=1.6")
-            .to(currentAnimateElem, 0.3, {
+            }, "+=2.4")
+            .to(currentAnimateElem, 0.35, {
                 ease: Linear.easeNone,
                 opacity: 0
             });
     } else if (isPofol) {
-        // 포폴 간격 타이트 + 마지막은 다음 문구와 겹치지 않게 빨리 퇴장
-        var hold = isLastPofol ? 0.25 : 0.4;
         tween_opacity
             .to(currentAnimateElem, 0.2, {
                 ease: Linear.easeNone,
@@ -289,8 +311,8 @@ for (var i = 0; i < animateElem.length; i++) {
             .to(currentAnimateElem, 0.2, {
                 ease: Linear.easeNone,
                 opacity: 1
-            }, "+=" + hold)
-            .to(currentAnimateElem, isLastPofol ? 0.2 : 0.25, {
+            }, "+=0.45")
+            .to(currentAnimateElem, 0.25, {
                 ease: Linear.easeNone,
                 opacity: 0
             });
@@ -313,13 +335,88 @@ for (var i = 0; i < animateElem.length; i++) {
 
     timeline.add(tween_move, 0).add(tween_opacity, 0);
 
+    var sceneDuration = isAbout ? "140%" : "100%";
+
     var scene_main = new ScrollMagic.Scene({
         triggerElement: currentTriggerElem,
-        duration: isLastPofol ? "85%" : (isPofol ? "95%" : "100%")
+        duration: sceneDuration
     })
         .setTween(timeline)
         .addTo(controller);
+
+    if (isPofol) {
+        (function (selector) {
+            scene_main.on("progress", function (e) {
+                var el = document.querySelector(selector);
+                if (!el) return;
+                if (e.progress >= 0.06 && e.progress <= 0.88) {
+                    el.classList.add("is-visible");
+                } else {
+                    el.classList.remove("is-visible");
+                }
+            });
+            scene_main.on("leave", function () {
+                var el = document.querySelector(selector);
+                if (el) el.classList.remove("is-visible");
+            });
+        })(currentAnimateElem);
+    }
 } // 첫번째 애니메이션 (반복문)
+
+/**
+ * 참여물 문구(animate_8):
+ * - 마지막 포폴(.pofol-pin 7번째)이 화면에서 완전히 사라진 뒤에만 표시
+ * - 그 다음 trigger_8 구간에서 페이드 인 → 유지 → 페이드 아웃
+ * ScrollMagic 타이밍에 맡기지 않음 (포폴보다 먼저 뜨던 원인)
+ */
+function syncClosingCopy() {
+    var pins = document.querySelectorAll("#scroll-section-2 .pofol-pin");
+    var closing = document.querySelector(".animate_8");
+    var trigger8 = document.querySelector(".trigger_8");
+    if (!pins.length || !closing || !trigger8) return;
+
+    var lastPin = pins[pins.length - 1];
+    var winH = window.innerHeight || document.documentElement.clientHeight;
+    var lastPinBottom = lastPin.getBoundingClientRect().bottom;
+
+    // 마지막 포폴이 아직 화면에 남아 있으면 문구 강제 숨김
+    if (lastPinBottom > winH * 0.08) {
+        closing.classList.remove("is-closing-show");
+        closing.style.opacity = "0";
+        closing.style.transform = "translateY(30px)";
+        return;
+    }
+
+    closing.classList.add("is-closing-show");
+
+    // trigger_8 구간 진행률로 등장/퇴장
+    var tRect = trigger8.getBoundingClientRect();
+    var start = winH * 0.75;   // 트리거가 이 지점 위로 오면 등장 시작
+    var end = -winH * 0.2;     // 위로 충분히 지나면 퇴장
+    var progress = (start - tRect.top) / (start - end);
+    if (progress < 0) progress = 0;
+    if (progress > 1) progress = 1;
+
+    var opacity = 0;
+    var y = 30;
+    if (progress < 0.18) {
+        var a = progress / 0.18;
+        opacity = a;
+        y = 30 * (1 - a);
+    } else if (progress < 0.72) {
+        opacity = 1;
+        y = 0;
+    } else {
+        var b = (progress - 0.72) / 0.28;
+        opacity = 1 - b;
+        y = -30 * b;
+    }
+
+    closing.style.opacity = String(opacity);
+    closing.style.transform = "translateY(" + y + "px)";
+}
+
+window.addEventListener("scroll", syncClosingCopy, { passive: true });
 
 var ctrl2 = new ScrollMagic.Controller();	// 1. ScrollMagic 컨트롤러 생성
 var ctrl3 = new ScrollMagic.Controller();
