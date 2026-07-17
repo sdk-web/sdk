@@ -243,6 +243,8 @@ var triggerElem = [".trigger_1", ".trigger_2", ".trigger_3", ".trigger_4", ".tri
 for (var i = 0; i < animateElem.length; i++) {
     var currentAnimateElem = animateElem[i];
     var currentTriggerElem = triggerElem[i];
+    var isPofolCard = i >= 0 && i <= 6;
+    var isAboutBlock = currentAnimateElem === ".animate_11";
 
     var timeline = new TimelineMax();
 
@@ -251,35 +253,64 @@ for (var i = 0; i < animateElem.length; i++) {
         1,
         {
             ease: SlowMo.ease.config(0.7, 0.7, false),
-            y: 50
+            y: isPofolCard ? 40 : 50
         },
         {
             ease: SlowMo.ease.config(0.7, 0.7, false),
-            y: -50
+            y: isPofolCard ? -40 : -50
         }
     );
 
     var tween_opacity = new TimelineMax();
-    tween_opacity
-        .to(currentAnimateElem, 0.3, {
-            ease: Linear.easeNone,
-            opacity: 1
-        })
-        .to(
-            currentAnimateElem,
-            0.3,
-            {
+
+    if (isAboutBlock) {
+        // 소개 텍스트는 오래 보이도록 fade-out 제거 + 긴 hold
+        tween_opacity
+            .to(currentAnimateElem, 0.2, {
+                ease: Linear.easeNone,
+                opacity: 1
+            })
+            .to(currentAnimateElem, 0.2, {
+                ease: Linear.easeNone,
+                opacity: 1
+            }, "+=4.5");
+    } else if (isPofolCard) {
+        // 포트폴리오 카드: 썸네일/링크를 읽을 수 있게 더 오래 유지
+        tween_opacity
+            .to(currentAnimateElem, 0.25, {
+                ease: Linear.easeNone,
+                opacity: 1
+            })
+            .to(currentAnimateElem, 0.25, {
+                ease: Linear.easeNone,
+                opacity: 1
+            }, "+=1.15")
+            .to(currentAnimateElem, 0.35, {
                 ease: Linear.easeNone,
                 opacity: 0
-            },
-            "+=0.4"
-        );
+            });
+    } else {
+        tween_opacity
+            .to(currentAnimateElem, 0.3, {
+                ease: Linear.easeNone,
+                opacity: 1
+            })
+            .to(
+                currentAnimateElem,
+                0.3,
+                {
+                    ease: Linear.easeNone,
+                    opacity: 0
+                },
+                "+=0.4"
+            );
+    }
 
     timeline.add(tween_move, 0).add(tween_opacity, 0);
 
     var scene_main = new ScrollMagic.Scene({
         triggerElement: currentTriggerElem,
-        duration: "100%"
+        duration: isAboutBlock ? "220%" : (isPofolCard ? "140%" : "100%")
     })
         .setTween(timeline)
         .addTo(controller);

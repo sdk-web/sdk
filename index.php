@@ -18,8 +18,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/vendors/jquery.easings.min.js"></script>
 <script src="/assets/js/jquery.scrollbar.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
-
-<script src="/assets/js/base.js?reload=<?=$times?>"></script>
 <script> history.scrollRestoration = "manual"; </script>
 </head>
 <body>
@@ -59,41 +57,104 @@
                         <section id="scroll-section-2" data-canvas="1">
                             <div class="context">
                                 <div class="spaceer h150"></div>
-                                <div class="tbox animate_1 left font-montserrat" data-val="1" data-name="(주)덕양산업 *패럴렉스기법 사용" data-url="https://dyauto.songdk.kro.kr/">
-                                    <div class="small">Portfolio</div>
-                                    <div class="big">(주)덕양산업</div>
+                                <div class="tbox pofol-card animate_1 left font-montserrat" data-val="1">
+                                    <div class="pofol-card-inner">
+                                        <div class="pofol-meta">
+                                            <div class="small">Portfolio 01</div>
+                                            <div class="big">(주)덕양산업</div>
+                                            <p class="pofol-desc">패럴렉스 기법 사용</p>
+                                            <a class="pofol-link" href="https://dyauto.songdk.kro.kr/" target="_blank" rel="noopener">dyauto.songdk.kro.kr</a>
+                                        </div>
+                                        <a class="pofol-thumb" href="https://dyauto.songdk.kro.kr/" target="_blank" rel="noopener">
+                                            <img src="/assets/portfolio/site1.webp" alt="(주)덕양산업">
+                                        </a>
+                                    </div>
                                 </div>
                                 <div class="trigger trigger_1"></div>
-                                <div class="tbox animate_2 right font-montserrat" data-val="2" data-name="위뷰티 *플러그인 커스텀" data-url="http://www.webeauty.co.kr/">
-                                    <div class="small">Portfolio</div>
-                                    <div class="big">위뷰티</div>
+                                <div class="tbox pofol-card animate_2 right font-montserrat" data-val="2">
+                                    <div class="pofol-card-inner">
+                                        <div class="pofol-meta">
+                                            <div class="small">Portfolio 02</div>
+                                            <div class="big">위뷰티</div>
+                                            <p class="pofol-desc">플러그인 커스텀</p>
+                                            <a class="pofol-link" href="http://www.webeauty.co.kr/" target="_blank" rel="noopener">www.webeauty.co.kr</a>
+                                        </div>
+                                        <a class="pofol-thumb" href="http://www.webeauty.co.kr/" target="_blank" rel="noopener">
+                                            <img src="/assets/portfolio/site2.webp" alt="위뷰티">
+                                        </a>
+                                    </div>
                                 </div>
                                 <div class="trigger trigger_2"></div>
-                                <div class="tbox animate_3 left font-montserrat" data-val="3" data-name="대한환경" data-url="http://www.daehanwater.kr/">
-                                    <div class="small">Portfolio</div>
-                                    <div class="big">대한환경</div>
+                                <div class="tbox pofol-card animate_3 left font-montserrat" data-val="3">
+                                    <div class="pofol-card-inner">
+                                        <div class="pofol-meta">
+                                            <div class="small">Portfolio 03</div>
+                                            <div class="big">대한환경</div>
+                                            <p class="pofol-desc">기업형 홈페이지</p>
+                                            <a class="pofol-link" href="http://www.daehanwater.kr/" target="_blank" rel="noopener">www.daehanwater.kr</a>
+                                        </div>
+                                        <a class="pofol-thumb" href="http://www.daehanwater.kr/" target="_blank" rel="noopener">
+                                            <img src="/assets/portfolio/site3.webp" alt="대한환경">
+                                        </a>
+                                    </div>
                                 </div>
                                 <div class="trigger trigger_3"></div>
-                                <div class="tbox animate_4 right font-montserrat" data-val="4" data-name="인천스마트시티 *포스기 전용 (F11 전체화면기준)" data-url="https://incheonsmart.cafe24.com/">
-                                    <div class="small">Portfolio</div>
-                                    <div class="big">인천스마트시티</div>
+                                <div class="tbox pofol-card animate_4 right font-montserrat" data-val="4">
+                                    <div class="pofol-card-inner">
+                                        <div class="pofol-meta">
+                                            <div class="small">Portfolio 04</div>
+                                            <div class="big">인천스마트시티</div>
+                                            <p class="pofol-desc">포스기 전용 (F11 전체화면 기준)</p>
+                                            <a class="pofol-link" href="https://incheonsmart.cafe24.com/" target="_blank" rel="noopener">incheonsmart.cafe24.com</a>
+                                        </div>
+                                        <a class="pofol-thumb" href="https://incheonsmart.cafe24.com/" target="_blank" rel="noopener">
+                                            <img src="/assets/portfolio/site4.webp" alt="인천스마트시티">
+                                        </a>
+                                    </div>
                                 </div>
                                 <div class="trigger trigger_4"></div>
-                                <div class="tbox animate_5 left font-montserrat" data-val="5" data-name="백아바이오티" data-url="https://baekabioty.songdk.kro.kr/">
-                                    <div class="small">Portfolio</div>
-                                    <div class="big">백아바이오티</div>
+                                <div class="tbox pofol-card animate_5 left font-montserrat" data-val="5">
+                                    <div class="pofol-card-inner">
+                                        <div class="pofol-meta">
+                                            <div class="small">Portfolio 05</div>
+                                            <div class="big">백아바이오티</div>
+                                            <p class="pofol-desc">기업형 홈페이지</p>
+                                            <a class="pofol-link" href="https://baekabioty.songdk.kro.kr/" target="_blank" rel="noopener">baekabioty.songdk.kro.kr</a>
+                                        </div>
+                                        <a class="pofol-thumb" href="https://baekabioty.songdk.kro.kr/" target="_blank" rel="noopener">
+                                            <img src="/assets/portfolio/site5.webp" alt="백아바이오티">
+                                        </a>
+                                    </div>
                                 </div>
                                 <div class="trigger trigger_5"></div>
-                                <div class="tbox animate_6 right font-montserrat" data-val="6" data-name="ALL PARKING" data-url="http://all-parking.co.kr/">
-                                    <div class="small">Portfolio</div>
-                                    <div class="big">ALL PARKING</div>
+                                <div class="tbox pofol-card animate_6 right font-montserrat" data-val="6">
+                                    <div class="pofol-card-inner">
+                                        <div class="pofol-meta">
+                                            <div class="small">Portfolio 06</div>
+                                            <div class="big">ALL PARKING</div>
+                                            <p class="pofol-desc">기업형 홈페이지</p>
+                                            <a class="pofol-link" href="http://all-parking.co.kr/" target="_blank" rel="noopener">all-parking.co.kr</a>
+                                        </div>
+                                        <a class="pofol-thumb" href="http://all-parking.co.kr/" target="_blank" rel="noopener">
+                                            <img src="/assets/portfolio/site6.webp" alt="ALL PARKING">
+                                        </a>
+                                    </div>
                                 </div>
                                 <div class="trigger trigger_6"></div>
-                                <div class="tbox animate_7 left font-montserrat" data-val="7" data-name="Seoul ADEX 2023" data-url="https://seouladex.com/">
-                                    <div class="small">Portfolio</div>
-                                    <div class="big">Seoul ADEX 2023</div>
+                                <div class="tbox pofol-card animate_7 left font-montserrat" data-val="7">
+                                    <div class="pofol-card-inner">
+                                        <div class="pofol-meta">
+                                            <div class="small">Portfolio 07</div>
+                                            <div class="big">Seoul ADEX 2023</div>
+                                            <p class="pofol-desc">행사 사이트</p>
+                                            <a class="pofol-link" href="https://seouladex.com/" target="_blank" rel="noopener">seouladex.com</a>
+                                        </div>
+                                        <a class="pofol-thumb" href="https://seouladex.com/" target="_blank" rel="noopener">
+                                            <img src="/assets/portfolio/site7.webp" alt="Seoul ADEX 2023">
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="trigger trigger_7"></div>                      
+                                <div class="trigger trigger_7"></div>
                             </div>
                         </section>
                         <section id="scroll-section-3" data-canvas="no" data-before="1">
@@ -128,7 +189,7 @@
                                     <div class="trigger_bg"></div>
                                     <!-- <div class="h100"></div> -->
                                     <div class="txt animate_11 about">
-										<div class="about_left on">
+										<div class="about_left">
 											<ul>
 												<li><p>송대경 / 1994.01.05 / 010-7521-7550</p></li>
 												<li><p>eoruddl09@naver.com / 인천광역시 서구</p></li>
@@ -136,10 +197,12 @@
 													<p>다양한 플러그인 활용, 반응형웹 제작<br>제로보드, 워드프레스, 그누보드를 이용한 웹사이트 제작<br>PHP(CodeIgniter), AngularJS, MariaDB 환경에서 개발.</p>
 												</li>
 												<li>
-													<p><a href="http://www.aiwebs.co.kr/" target="_blank">아이웹스</a> (웹에이전시) / 2016. 11 ~ 2017. 11 <br>
-													<a href="https://showm.kr/" target="_blank">쇼엠</a> (마케팅업체) / 2017. 12 ~ 2019. 12 <br>
-													<a href="https://bmcnet.kr/" target="_blank">㈜비엠씨</a> (개발업체) / 2020. 05 ~ 2022. 12 <br>
-                                                    <a href="https://story.mint05.com/" target="_blank">에듀서브</a> (화상영어플랫폼) / 2023. 05 ~ 2025. 12
+													<p>
+                                                    <a href="http://www.medinmedi.com" target="_blank" rel="noopener">메디엔메디</a> (병원마케팅) / 2026. 06 ~ 현재 <br>
+                                                    <a href="http://www.aiwebs.co.kr/" target="_blank" rel="noopener">아이웹스</a> (웹에이전시) / 2016. 11 ~ 2017. 11 <br>
+													<a href="https://showm.kr/" target="_blank" rel="noopener">쇼엠</a> (마케팅업체) / 2017. 12 ~ 2019. 12 <br>
+													<a href="https://bmcnet.kr/" target="_blank" rel="noopener">㈜비엠씨</a> (개발업체) / 2020. 05 ~ 2022. 12 <br>
+                                                    <a href="https://story.mint05.com/" target="_blank" rel="noopener">에듀서브</a> (화상영어플랫폼) / 2023. 05 ~ 2025. 12
 													</p>
 												</li>
 											</ul>
@@ -147,11 +210,11 @@
 												<span class="line1"></span>
 												<span class="line2"></span>
 												<span class="line3"></span>
-												<div class="skill_img"><img src="img/skill1.webp" alt="" style="width:700px;"><br><img src="img/skill2.webp" alt="" style="width:700px;"></div>
+												<div class="skill_img"><img src="/assets/images/skill1.webp" alt=""><br><img src="/assets/images/skill2.webp" alt=""></div>
 											</div>
 										</div>
                                     </div>
-                                    <div class="trigger trigger_11"></div>
+                                    <div class="trigger trigger_11" style="height:180vh;"></div>
                                 </div>
 
                                 <div class="bma-bot-tit">
@@ -239,7 +302,6 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
     <script src="/assets/js/parallax-main.js"></script>
-	<script src="/assets/js/popup.js"></script>
     <script>
         $(function(){
 			wheel();
@@ -258,29 +320,51 @@
 
             $(".bmabot-tab li").eq(0).trigger("click");
         });
-        
-        var sticky_bg = $(".sticky-bg").offset().top;
 
-        window.addEventListener('scroll', () => {
-            var movie_scroll = $(window).scrollTop();
-            var m_winHeight = $(window).height();
-            var m_winHmiddle = m_winHeight/2;
-            var movie_start_y = sticky_bg + $(".sticky-bg").outerHeight();
-            // var movie_end_y = sticky_bg + m_winHeight + $(".sticky-bg").outerHeight();
-            var movie_end_y = $(".bma-bot-tit").offset().top - m_winHmiddle;
+        var aboutRevealed = false;
 
-            console.log("movie_scroll: " + movie_scroll);
-            console.log("movie_start_y: " + movie_start_y);
-            console.log("movie_end_y: " + movie_end_y);
-            if(movie_scroll > movie_start_y && movie_scroll < movie_end_y){
-                $("#scroll-video-1")[0].contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-				$(".about_left").addClass("on");
-            }else{
-                $("#scroll-video-1")[0].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-				$(".about_left").removeClass("on");
-                console.log("끝");
+        function syncAboutVideo() {
+            var sticky = document.querySelector(".sticky-bg");
+            var about = document.querySelector(".about_left");
+            var video = document.querySelector("#scroll-video-1");
+            var skillTit = document.querySelector(".bma-bot-tit");
+            if (!sticky || !about || !video) {
+                return;
             }
-        });
+
+            var winH = window.innerHeight || document.documentElement.clientHeight;
+            var stickyRect = sticky.getBoundingClientRect();
+            var stickyVisible = stickyRect.top < winH * 0.75 && stickyRect.bottom > winH * 0.2;
+            var pastSticky = stickyRect.bottom <= winH * 0.15;
+            var aboveSticky = stickyRect.top >= winH * 0.9;
+
+            if (stickyVisible) {
+                video.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+                about.classList.add("on");
+                aboutRevealed = true;
+            } else if (pastSticky) {
+                // 영상 구간을 지나도 소개 텍스트는 유지
+                video.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+                if (aboutRevealed) {
+                    about.classList.add("on");
+                }
+            } else if (aboveSticky) {
+                video.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+                about.classList.remove("on");
+                aboutRevealed = false;
+            }
+
+            if (skillTit) {
+                var skillTop = skillTit.getBoundingClientRect().top;
+                if (skillTop < winH * 0.55) {
+                    video.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+                }
+            }
+        }
+
+        window.addEventListener("scroll", syncAboutVideo, { passive: true });
+        window.addEventListener("resize", syncAboutVideo);
+        window.addEventListener("load", syncAboutVideo);
 
 		function skillPlay(n){
 			$("#video-cover-"+n).fadeOut(300);
@@ -291,7 +375,5 @@
 			$("a.mouse span.wheel").animate( { "top":"12px","opacity":"1" }, 700 ).animate( { "top":"4px","opacity":"0" },0, null, wheel );
 		}
     </script>
-
-	<div id="pop_wrap"></div>
 </body>
 </html>
